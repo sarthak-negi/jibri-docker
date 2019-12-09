@@ -40,9 +40,6 @@ services:
             - DISPLAY=:0
             - TZ
             - JIBRI_EXTERNAL_INSTANCE
-        depends_on:
-            - prosody
-            - jicofo
         networks:
             meet.jitsi:
 
