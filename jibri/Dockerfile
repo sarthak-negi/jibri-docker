@@ -49,3 +49,11 @@ VOLUME /config
 RUN apt-get update -y && apt-get install -y --allow-unauthenticated curl iputils-ping vim
 
 COPY custom/finalize.sh /config/
+
+RUN apt-get update -y
+RUN apt-get install -y software-properties-common dirmngr
+RUN add-apt-repository ppa:jonathonf/python-3.6
+RUN apt-get update -y
+
+RUN apt-get install -y python3-pip python3-setuptools
+RUN pip3 install awscli
